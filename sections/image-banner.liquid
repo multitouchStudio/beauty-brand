@@ -120,6 +120,32 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
+            <style>
+              .star-rating {
+                display: inline-block;
+                font-size: 24px;
+                color: #ff700;
+              }
+              .start-rating .fa-star{
+                font-size: inherit;
+                transition: color 0.25s;
+              }
+              .star-rating .fa-star:hover, .star-rating .fa-star.active {
+                color: #f39c12;
+              }
+
+              .total-rating {
+                font-size: 18px;
+                color:#333;
+                margin-top: 5px;
+              }
+            </style>
+            <div class="star-rating" data-rating="4.7">
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
             <h2
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}

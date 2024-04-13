@@ -67,33 +67,30 @@
         "padding_bottom": 36
       }
     },
-    "multicolumn_Czydhi": {
-      "type": "multicolumn",
+    "steps_reMtX4": {
+      "type": "steps",
       "blocks": {
-        "column_rRQg7U": {
+        "column_UQQKTw": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/9025885_shopping_cart_icon_db46c354-50cb-4a71-aaf8-2e7c7636a562.png",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_b3XT7F": {
+        "column_DUq7xE": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
           }
         },
-        "column_pkJUKg": {
+        "column_GYjUBn": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/9165484_happy_emoji_face_icon_51267891-26b4-4425-9a33-759e86ad10d4.png",
             "title": "Column",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
@@ -102,12 +99,12 @@
         }
       },
       "block_order": [
-        "column_rRQg7U",
-        "column_b3XT7F",
-        "column_pkJUKg"
+        "column_UQQKTw",
+        "column_DUq7xE",
+        "column_GYjUBn"
       ],
       "settings": {
-        "title": "Multicolumn",
+        "title": "The Transformation",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",
@@ -127,6 +124,6 @@
   "order": [
     "image_banner",
     "featured_collection",
-    "multicolumn_Czydhi"
+    "steps_reMtX4"
   ]
 }

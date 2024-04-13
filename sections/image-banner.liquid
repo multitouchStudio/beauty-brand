@@ -120,61 +120,8 @@
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
-            <script>
-              document.addEventListener("DOMContentLoaded", function() {
-                const rating = 4.7; // Your dynamic rating
-                const starsPercentage = (rating / 5) * 100; // Convert to percentage
-                // Round to nearest 10 to handle half-stars if necessary
-                const starsPercentageRounded = `${(Math.round(starsPercentage / 10) * 10)}%`;
-                
-                document.querySelector('.full-stars').style.width = starsPercentageRounded;
-              });
 
-            </script>
-            <style>
-              .review-banner {
-                  font-family: Arial, sans-serif;
-                  line-height: 1;
-                  color: #333;
-                  display: flex;
-                  align-items: center;
-              }
-
-              .stars {
-                  display: inline-block;
-                  font-size: 16px;
-                  position: relative;
-                  color: #ccc;
-              }
-
-              .full-stars {
-                  display: inline-block;
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                  white-space: nowrap;
-                  overflow: hidden;
-                  color: gold;
-              }
-
-              .score {
-                  margin-left: 5px;
-                  font-weight: bold;
-              }
-
-              .review-count {
-                  font-weight: normal;
-              }
-            </style>
-            <div class="review-banner">
-              <div class="stars" aria-label="Rating of 4.7 out of 5 stars">
-                  <div class="full-stars" style="width: 94%;">★★★★★</div>
-                  ★★★★★
-              </div>
-              <span class="score">4.7/5</span> based on <span class="review-count">6,347 reviews</span>
-          </div>
-          
-
+            {% render 'star-rating' %}
             <h2
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}

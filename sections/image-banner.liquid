@@ -121,13 +121,18 @@
         {%- case block.type -%}
           {%- when 'heading' -%}
 
-            {% render 'star-rating' %}
             <h2
               class="banner__heading inline-richtext {{ block.settings.heading_size }}"
               {{ block.shopify_attributes }}
             >
               {{ block.settings.heading }}
             </h2>
+            {%- when 'star' -%}
+              <div class="review-banner">
+                {% render 'star-rating' %}
+              </div>
+
+          </div> {% endcomment %}
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>
               <p>{{ block.settings.text }}</p>
@@ -398,35 +403,24 @@
       ]
     },
     {
-      "type": "text",
-      "name": "t:sections.image-banner.blocks.text.name",
+      "type": "star",
+      "name": "Star Ratings",
       "limit": 1,
       "settings": [
         {
-          "type": "richtext",
-          "id": "text",
-          "default": "<p>Give customers details about the banner image(s) or content on the template.</p>",
-          "label": "t:sections.image-banner.blocks.text.settings.text.label"
+          "type": "range",
+          "id": "reviews",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "label": "Reviews",
+          "default": 3
         },
         {
-          "type": "select",
-          "id": "text_style",
-          "options": [
-            {
-              "value": "body",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__1.label"
-            },
-            {
-              "value": "subtitle",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__2.label"
-            },
-            {
-              "value": "caption-with-letter-spacing",
-              "label": "t:sections.image-banner.blocks.text.settings.text_style.options__3.label"
-            }
-          ],
-          "default": "body",
-          "label": "t:sections.image-banner.blocks.text.settings.text_style.label"
+          "type": "text",
+          "id": "text",
+          "default": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+          "label": "Give Star Rating"
         }
       ]
     },

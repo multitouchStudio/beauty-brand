@@ -13,7 +13,7 @@
         "text_pyicW3": {
           "type": "text",
           "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
+            "text": "<ul><li>Give customers details about the banner image(s) or content on the template.<\/li><li>Give customers details about the banner image(s) or content on the template.<\/li><li>Give customers details about the banner image(s) or content on the template.<\/li><\/ul>",
             "text_style": "body"
           }
         },

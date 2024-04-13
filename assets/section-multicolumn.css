@@ -220,6 +220,10 @@
   white-space: nowrap;
 }
 
+.title-wrapper-with-link.center {
+  justify-content: center;
+}
+
 @media screen and (min-width: 990px) {
   .multicolumn-list__item--empty {
     display: list-item;

@@ -74,7 +74,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/9025885_shopping_cart_icon_db46c354-50cb-4a71-aaf8-2e7c7636a562.png",
-            "title": "Column",
+            "title": "Step 1",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -84,7 +84,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
-            "title": "Column",
+            "title": "Step 2",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -94,7 +94,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/9165484_happy_emoji_face_icon_51267891-26b4-4425-9a33-759e86ad10d4.png",
-            "title": "Column",
+            "title": "Step 3",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "link_label": "",
             "link": ""
@@ -114,9 +114,9 @@
         "columns_desktop": 3,
         "column_alignment": "left",
         "background_style": "primary",
-        "button_label": "Button label",
+        "button_label": "",
         "button_link": "",
-        "color_scheme": "",
+        "color_scheme": "scheme-2",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,

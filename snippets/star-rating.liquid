@@ -1,13 +1,18 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const ratingElement = document.querySelector('.review-banner .stars');
-  if (ratingElement) {
-    const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
-    const starsPercentage = (rating / 5) * 100;
-    document.querySelector('.full-stars').style.width = `${starsPercentage}%`;
-  } else {
-    console.error('Rating element not found');
-  }
+    const ratingElement = document.querySelector('.review-banner .stars');
+    if (ratingElement) {
+        const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
+        const starsPercentage = (rating / 5) * 100;
+        const fullStarsDiv = document.querySelector('.review-banner .full-stars');
+        if (fullStarsDiv) {
+            fullStarsDiv.style.width = `${starsPercentage}%`;
+        } else {
+            console.error('Full stars div not found');
+        }
+    } else {
+        console.error('Rating element not found');
+    }
 });
 
 
@@ -16,38 +21,46 @@ document.addEventListener("DOMContentLoaded", function() {
             <style>
             
             .review-banner {
-                font-family: Arial, sans-serif;
-                line-height: 1;
-                color: #333;
-                display: flex;
-                align-items: center;
-                }
+    font-family: Arial, sans-serif;
+    line-height: 1;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
 
-                .stars {
-                display: inline-block;
-                font-size: 16px;
-                position: relative;
-                color: #ccc; /* Grey color for the empty stars */
-                }
+.stars {
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    color: #ccc; /* Grey color for the empty stars */
+}
 
-                .full-stars {
-                display: inline-block;
-                position: absolute;
-                top: 0;
-                left: 0;
-                white-space: nowrap;
-                overflow: hidden;
-                color: gold; /* Gold color for the full stars */
-                }
+.base-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    color: #ccc; /* Grey color for the base stars */
+}
 
-                .score {
-                margin-left: 5px;
-                font-weight: bold;
-                }
+.full-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: gold; /* Gold color for the full stars */
+}
 
-                .review-count, .review-text {
-                font-weight: normal;
-                }
+.score {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+.review-text {
+    font-weight: normal;
+}
+
 
             </style>
            

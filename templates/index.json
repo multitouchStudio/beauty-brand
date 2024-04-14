@@ -3,6 +3,13 @@
     "image_banner": {
       "type": "image-banner",
       "blocks": {
+        "star_WQGqNQ": {
+          "type": "star",
+          "settings": {
+            "reviews": 3,
+            "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>"
+          }
+        },
         "heading": {
           "type": "heading",
           "settings": {
@@ -27,20 +34,13 @@
             "button_link_2": "",
             "button_style_secondary_2": false
           }
-        },
-        "star_WQGqNQ": {
-          "type": "star",
-          "settings": {
-            "reviews": 3,
-            "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>"
-          }
         }
       },
       "block_order": [
+        "star_WQGqNQ",
         "heading",
         "text_pyicW3",
-        "button",
-        "star_WQGqNQ"
+        "button"
       ],
       "settings": {
         "image_overlay_opacity": 40,

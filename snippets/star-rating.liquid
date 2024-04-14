@@ -4,11 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
   if (ratingElement) {
     const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
     const starsPercentage = (rating / 5) * 100;
-    const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
-    console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
-    document.querySelector('.full-stars').style.width = starsPercentageRounded;
+    document.querySelector('.full-stars').style.width = `${starsPercentage}%`;
   } else {
-    console.error('Rating element not found'); // For debugging
+    console.error('Rating element not found');
   }
 });
 
@@ -23,16 +21,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 color: #333;
                 display: flex;
                 align-items: center;
-            }
-            
-            .stars {
+                }
+
+                .stars {
                 display: inline-block;
                 font-size: 16px;
                 position: relative;
                 color: #ccc; /* Grey color for the empty stars */
-            }
-            
-            .full-stars {
+                }
+
+                .full-stars {
                 display: inline-block;
                 position: absolute;
                 top: 0;
@@ -40,17 +38,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 white-space: nowrap;
                 overflow: hidden;
                 color: gold; /* Gold color for the full stars */
-                width: 0; /* Initial width is 0, will be set by JS */
-            }
-            
-            .score {
+                }
+
+                .score {
                 margin-left: 5px;
                 font-weight: bold;
-            }
-            
-            .review-count {
+                }
+
+                .review-count, .review-text {
                 font-weight: normal;
-            }
-            
+                }
+
             </style>
            

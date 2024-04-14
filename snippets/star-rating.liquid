@@ -1,20 +1,14 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const ratingElement = document.querySelector('.review-banner .stars');
-    if (ratingElement) {
-        const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
-        const starsPercentage = (rating / 5) * 100;
-        const fullStarsDiv = document.querySelector('.review-banner .full-stars');
-        if (fullStarsDiv) {
-            fullStarsDiv.style.width = `${starsPercentage}%`;
-        } else {
-            console.error('Full stars div not found');
-        }
-    } else {
-        console.error('Rating element not found');
-    }
+  const ratingElement = document.querySelector('.review-banner .stars');
+  if (ratingElement) {
+    const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
+    const starsPercentage = (rating / 5) * 100;
+    document.querySelector('.review-banner .full-stars').style.width = `${starsPercentage}%`;
+  } else {
+    console.error('Rating element not found');
+  }
 });
-
 
 
             </script>
@@ -32,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function() {
     display: inline-block;
     font-size: 16px;
     position: relative;
-    color: #ccc; /* Grey color for the empty stars */
 }
 
 .base-stars {
@@ -50,15 +43,12 @@ document.addEventListener("DOMContentLoaded", function() {
     white-space: nowrap;
     overflow: hidden;
     color: gold; /* Gold color for the full stars */
+    width: 0; /* Initial width is 0, will be set by JS */
 }
 
-.score {
+.score, .review-text {
     margin-left: 5px;
     font-weight: bold;
-}
-
-.review-text {
-    font-weight: normal;
 }
 
 

@@ -4,53 +4,52 @@ document.addEventListener("DOMContentLoaded", function() {
   if (ratingElement) {
     const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
     const starsPercentage = (rating / 5) * 100;
-    document.querySelector('.review-banner .full-stars').style.width = `${starsPercentage}%`;
+    const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
+    console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
+    document.querySelector('.full-stars').style.width = starsPercentageRounded;
   } else {
-    console.error('Rating element not found');
+    console.error('Rating element not found'); // For debugging
   }
 });
+
 
 
             </script>
             <style>
             
             .review-banner {
-    font-family: Arial, sans-serif;
-    line-height: 1;
-    color: #333;
-    display: flex;
-    align-items: center;
-}
+        font-family: Arial, sans-serif;
+        line-height: 1;
+        color: #333;
+        display: flex;
+        align-items: center;
+        }
 
-.stars {
-    display: inline-block;
-    font-size: 16px;
-    position: relative;
-}
+        .stars {
+        display: inline-block;
+        font-size: 16px;
+        position: relative;
+        color: #ccc; /* Grey color for the empty stars */
+        }
 
-.base-stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    color: #ccc; /* Grey color for the base stars */
-}
+        .full-stars {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        color: gold; /* Gold color for the full stars */
+        }
 
-.full-stars {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    color: gold; /* Gold color for the full stars */
-    width: 0; /* Initial width is 0, will be set by JS */
-}
+        .score {
+        margin-left: 5px;
+        font-weight: bold;
+        }
 
-.score, .review-text {
-    margin-left: 5px;
-    font-weight: bold;
-}
-
+        .review-count, .review-text {
+        font-weight: normal;
+        }
 
             </style>
            

@@ -130,13 +130,14 @@
             {%- when 'star' -%}
               <div class="review-banner">
                 <div class="stars" aria-label="Rating of {{ block.settings.reviews }} out of 5 stars">
-                  <div class="full-stars"></div>
+                  <div class="full-stars" style="--rating: {{ block.settings.reviews }};">★★★★★</div>
                   ★★★★★
                 </div>
                 <span class="score">{{ block.settings.reviews }}/5&nbsp;</span>based on <span class="review-count">&nbsp;6,347 reviews</span>
               </div>
               {{ block.settings.text }}
               {% render 'star-rating', rating: block.settings.reviews %}
+
 
 
           {%- when 'text' -%}

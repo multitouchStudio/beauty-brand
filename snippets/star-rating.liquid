@@ -1,12 +1,15 @@
 <script>
               document.addEventListener("DOMContentLoaded", function() {
-                const rating = 4.7; // Your dynamic rating
+                // Fetch the dynamic rating from data attribute
+                const ratingElement = document.querySelector('.review-banner .stars');
+                const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
+
                 const starsPercentage = (rating / 5) * 100; // Convert to percentage
-                // Round to nearest 10 to handle half-stars if necessary
-                const starsPercentageRounded = `${(Math.round(starsPercentage / 10) * 10)}%`;
+                const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
                 
                 document.querySelector('.full-stars').style.width = starsPercentageRounded;
-              });
+                });
+
 
             </script>
             <style>

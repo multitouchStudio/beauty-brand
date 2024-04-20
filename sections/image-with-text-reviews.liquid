@@ -99,6 +99,7 @@
                     </a>
                   {%- endif -%}
                   {% assign randomId = section.id | split: "_" | last %}
+                  {{ randomId }}
                   <div class="review-banner">
                 <div class="stars" aria-label="Rating of {{ block.settings.reviews }} out of 5 stars">
                   <div class="full-stars" id="reviews-{{ randomId }}">★★★★★</div>

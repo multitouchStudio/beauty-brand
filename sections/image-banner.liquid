@@ -133,7 +133,7 @@
                 <div class="stars-inner">&nbsp;</div>
               </div>
               {{ block.settings.reviews }}{{ block.settings.text }}
-              {% render 'star-rating', rating: block.settings.reviews, id:randomId %}
+              {% render 'star-rating', rating: block.settings.reviews id:randomId %}
               
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>

@@ -1,30 +1,18 @@
 <script>
   console.log('test');
   console.log('{{ id }}');
-  document.addEventListener("DOMContentLoaded", function() {
-    console.log(`this is the log ${id}`)
-    console.log('Looking for stars container with ID:', 'reviews-' + {{id}});
-    
-    // Check if the container itself is found
-    const containerExists = document.querySelector('#reviews-' + id);
-    console.log('Container exists:', containerExists);
-
-    // Now attempt to select the stars container
-    const starsContainer = document.querySelector('#reviews-' + id + ' .full-stars');
-    console.log('Stars container found:', starsContainer);
-
-    if (starsContainer) {
-      const ratingLabel = containerExists.parentNode.getAttribute('aria-label');
-      const rating = parseFloat(ratingLabel.match(/Rating of ([\d.]+) out of 5 stars/)[1]);
-      const starsPercentage = (rating / 5) * 100;
-      const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
-      starsContainer.style.width = starsPercentageRounded;
-
-      console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
-    } else {
-      console.error('Rating element not found'); // For debugging
-    }
-  });
+document.addEventListener("DOMContentLoaded", function() {
+  const ratingElement = document.querySelector('.review-banner .stars');
+  if (ratingElement) {
+    const rating{{id}} = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
+    const starsPercentage{{id}} = (rating{{id}} / 5) * 100;
+    const starsPercentageRounded{{id}} = `${Math.round(starsPercentage{{id}})}% `;
+    console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
+    document.querySelector(`#reviews-{{ id }} .full-stars`).style.width = starsPercentageRounded{{id}};
+  } else {
+    console.error('Rating element not found'); // For debugging
+  }
+});
 
 
 

@@ -1,8 +1,8 @@
 <script>
 
-(function(id) {
   document.addEventListener("DOMContentLoaded", function() {
-    console.log('Looking for stars container with ID:', 'reviews-' + id);
+    console.log(`this is the log ${id}`)
+    console.log('Looking for stars container with ID:', 'reviews-' + {{id}});
     
     // Check if the container itself is found
     const containerExists = document.querySelector('#reviews-' + id);
@@ -24,7 +24,6 @@
       console.error('Rating element not found'); // For debugging
     }
   });
-})({{ id }});
 
 
 

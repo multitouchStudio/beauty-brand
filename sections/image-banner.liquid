@@ -129,16 +129,11 @@
             </h2>
             {%- when 'star' -%}
               {% assign randomId = section.id | split: "_" | last %}
-              <div class="review-banner">
-                <div class="stars" aria-label="Rating of {{ block.settings.reviews }} out of 5 stars">
-                  <div class="full-stars" id="reviews-{{ randomId }}">★★★★★</div>
-                  <div class="base-stars">★★★★★</div>
-                </div>
-                <span class="score">{{ block.settings.reviews }}/5&nbsp;</span>
-                <span class="review-text">{{ block.settings.text }}</span>
+              <div class="stars-outer" id="reviews-{{ randomId }}">
+                <div class="stars-inner">&nbsp;</div>
               </div>
-              
-              {% render 'star-rating', rating: block.settings.reviews id:randomId %}
+              {{ block.settings.reviews }}{{ block.settings.text }}
+              {% render 'star-rating', rating: block.settings.reviews, id:randomId %}
               
           {%- when 'text' -%}
             <div class="banner__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>

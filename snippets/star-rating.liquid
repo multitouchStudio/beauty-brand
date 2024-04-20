@@ -1,59 +1,17 @@
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  // Log the id to verify it's what you expect
-  console.log('First ID:', '{{ id }}');
 
-  const ratingElement = document.querySelector('.review-banner .stars');
-  console.log('This is the ratingElement:', ratingElement);
 
-  if (ratingElement) {
-    const ratingText = ratingElement.getAttribute('aria-label');
-    const ratingMatch = ratingText.match(/Rating of ([\d.]+) out of 5 stars/);
-    
-    if (ratingMatch && ratingMatch[1]) {
-      const rating = parseFloat(ratingMatch[1]);
-      const starsPercentage = (rating / 5) * 100;
-      const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
+<link rel="stylesheet" href="https://cdjns.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-      console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
-
-      const fullStarsElement = document.querySelector(`#reviews-{{ id }} .full-stars`);
-      console.log('this is the fullStarsElement', fullStarsElement);
-      if (fullStarsElement) {
-        fullStarsElement.style.width = starsPercentageRounded;
-      } else {
-        console.error('Full stars element not found for ID:', '{{ id }}');
-      }
-    } else {
-      console.error('Rating not found in aria-label');
-    }
-  } else {
-    console.error('Rating element not found'); // For debugging
+<style>
+  .stars-outer::before {
+    content: "\f006 \f006 \f006 \f006 \f006";
   }
-});
 
-
-
-
-
-
-            </script>
-            <style>
-            
-            .review-banner {
-        font-family: Arial, sans-serif;
-        line-height: 1;
-        color: #333;
-        display: flex;
-        align-items: center;
-        }
-
-        .stars {
-        display: inline-block;
-        font-size: 16px;
-        position: relative;
-        color: #ccc; /* Grey color for the empty stars */
-        }
+  .star-outer {
+    display: inline-block;
+    position: relative;
+    font-family: fontAwesome;
+  }
 
         .full-stars {
         display: inline-block;

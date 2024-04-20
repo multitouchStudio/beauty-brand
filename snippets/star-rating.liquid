@@ -5,23 +5,30 @@
     content: "\f006 \f006 \f006 \f006 \f006";
   }
 
-  .star-outer {
-    display: inline-block;
-    position: relative;
-    font-family: FontAwesome;
-  }
+  .stars-outer {
+  display: inline-block;
+  position: relative;
+  unicode-bidi: bidi-override;
+  font-size: 25px; /* Adjust size as needed */
+  line-height: 1;
+  color: #ccc; /* Color of empty stars */
+}
 
-        .full-stars {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        white-space: nowrap;
-        overflow: hidden;
-        color: gold; /* Gold color for the full stars */
-        }
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: gold; /* Color of filled stars */
+}
 
-        .score {
+.stars-outer::before {
+  content: "★★★★★"; /* Five empty stars */
+  display: block;
+}       
+
+.score {
         margin-left: 5px;
         font-weight: bold;
         }
@@ -35,11 +42,11 @@
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   {% for block in section.blocks %}
-    const ratings{{ block.id }} = {{ block.settings.reviews }};
-    const starTotal{{ block.id }} = 5;
-    const starPercentage{{ block.id }} = (ratings{{ block.id }} / starTotal{{ block.id }}) * 100;
-    const starPercentageRounded{{ block.id }} = `${(Math.round(starPercentage{{ block.id }}/10) * 10)}%`;
-    document.querySelector(`#reviews-{{ block.id }} .stars-inner`).style.width = starPercentageRounded{{ block.id }};
+    const rating{{ block.id }} = {{ block.settings.reviews }};
+    const starTotal = 5;
+    const starPercentage = (rating{{ block.id }} / starTotal) * 100;
+    const starPercentageRounded = `${Math.round(starPercentage / 10) * 10}%`;
+    document.querySelector(`#reviews-{{ block.id }} .stars-inner`).style.width = starPercentageRounded;
   {% endfor %}
 });
 </script>

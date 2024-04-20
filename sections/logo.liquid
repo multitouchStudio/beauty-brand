@@ -1,7 +1,7 @@
 <div class="logoList--container page-width" style="padding-top: {{ section.settings.padding_top | append: "px" }}; padding-bottom: {{ section.settings.padding_bottom | append: "px" }}">
 
   <ul>
-    <li class="logoList--item">{{ section.settings.title | escape }}</li>
+    <li class="logoList--item titles">{{ section.settings.title | escape }}</li>
     {%- for block in section.blocks -%}
       <li class="logoList--item" {{ block.shopify_attributes }}>
         {%- if block.settings.link != blank -%}
@@ -32,6 +32,7 @@
     grid-template-columns: repeat(5, 1fr);
     gap: 1rem;
     justify-content: center;
+    align-items: center;
 }
   
   .logoList--item{
@@ -41,6 +42,10 @@
 
    .logoList--item img{
     width: 100%;
+   }
+
+   li.logoList--item.titles{
+    max-width: 180px;
    }
 </style>
 

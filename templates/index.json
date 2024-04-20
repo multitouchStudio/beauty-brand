@@ -7,7 +7,17 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
-            "title": "",
+            "title": "Column",
+            "text": "",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_RJ8F7E": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
+            "title": "Column",
             "text": "",
             "link_label": "",
             "link": ""
@@ -17,7 +27,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
-            "title": "",
+            "title": "Column",
             "text": "",
             "link_label": "",
             "link": ""
@@ -28,17 +38,7 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
             "title": "",
-            "text": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column_APP6ir": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/9113497_shipping_fast_solid_icon_939218a6-31b0-405c-8e0f-df8d070af2c5.png",
-            "title": "",
-            "text": "",
+            "text": "<p>Column<\/p>",
             "link_label": "",
             "link": ""
           }
@@ -46,12 +46,12 @@
       },
       "block_order": [
         "column_hP8CTU",
+        "column_RJ8F7E",
         "column_H9hrnE",
-        "column_PKbXTg",
-        "column_APP6ir"
+        "column_PKbXTg"
       ],
       "settings": {
-        "title": "Column",
+        "title": "",
         "heading_size": "h1",
         "image_width": "full",
         "image_ratio": "adapt",

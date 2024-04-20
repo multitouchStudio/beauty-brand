@@ -85,6 +85,7 @@
                     {{ block.settings.text }}
                   </div>
                 {%- when 'button' -%}
+                  <div class="btn_with-reviews">
                   {%- if block.settings.button_label != blank -%}
                     <a
                       {% if block.settings.button_link == blank %}
@@ -108,7 +109,8 @@
               </div>
 
               {% render 'star-rating', rating: block.settings.reviews %}
-              {%- endcase -%}
+              </div>  
+            {%- endcase -%}
             {%- endfor -%}
           </div>
         </div>

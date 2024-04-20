@@ -1,50 +1,55 @@
-
-
-<style>
-  .stars-outer {
-    display: inline-block;
-    position: relative;
-    unicode-bidi: bidi-override;
-    font-size: 25px; /* Size of the stars */
-    line-height: 1;
-    width: 125px; /* Total width - adjust if changing font size */
-    color: #ccc; /* Color of empty stars (gray) */
-  }
-
-  .stars-inner {
-    position: absolute;
-    top: 0;
-    left: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    color: gold; /* Color of filled stars (gold) */
-  }
-
-  .stars-outer::before {
-    content: "★★★★★"; /* Five empty stars using Unicode characters */
-    display: block;
-  }
-
-  .score {
-    margin-left: 5px;
-    font-weight: bold;
-  }
-
-  .review-count, .review-text {
-    font-weight: normal;
-  }
-</style>
-
-
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  {% for block in section.blocks %}
-    const rating = {{ block.settings.reviews }};
-    const starTotal = 5;
-    const starPercentage = (rating / starTotal) * 100;
-    const starPercentageRounded = `${Math.round(starPercentage * 10) / 10}%`; // More precise rounding
-    document.querySelector(`#reviews-{{ block.id }} .stars-inner`).style.width = starPercentageRounded;
-  {% endfor %}
+document.addEventListener("DOMContentLoaded", function() {
+  const ratingElement = document.querySelector('.review-banner .stars');
+  if (ratingElement) {
+    const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
+    const starsPercentage = (rating / 5) * 100;
+    const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
+    console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
+    document.querySelector('.full-stars').style.width = starsPercentageRounded;
+  } else {
+    console.error('Rating element not found'); // For debugging
+  }
 });
-</script>
 
+
+
+            </script>
+            <style>
+            
+            .review-banner {
+        font-family: Arial, sans-serif;
+        line-height: 1;
+        color: #333;
+        display: flex;
+        align-items: center;
+        }
+
+        .stars {
+        display: inline-block;
+        font-size: 16px;
+        position: relative;
+        color: #ccc; /* Grey color for the empty stars */
+        }
+
+        .full-stars {
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        color: gold; /* Gold color for the full stars */
+        }
+
+        .score {
+        margin-left: 5px;
+        font-weight: bold;
+        }
+
+        .review-count, .review-text {
+        font-weight: normal;
+        }
+
+            </style>
+           

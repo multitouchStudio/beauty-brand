@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const rating{{id}} = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
     const starsPercentage{{id}} = (rating{{id}} / 5) * 100;
     const starsPercentageRounded{{id}} = `${Math.round(starsPercentage{{id}})}% `;
-    console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
+    console.log('Rating:', rating, 'Width:', starsPercentageRounded{{id}}); // For debugging
     document.querySelector(`#reviews-{{ id }} .full-stars`).style.width = starsPercentageRounded{{id}};
   } else {
     console.error('Rating element not found'); // For debugging

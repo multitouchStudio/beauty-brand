@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const starsPercentage{{id}} = (rating{{id}} / 5) * 100;
     const starsPercentageRounded{{id}} = `${Math.round(starsPercentage{{id}})}% `;
     console.log('Rating:', rating{{id}}, 'Width:', starsPercentageRounded{{id}}); // For debugging
-    console.log(document.querySelector(`#reviews-{{ id }} .full-stars`).style.width = starsPercentageRounded{{id}});
+    document.querySelector(`#reviews-{{ id }} .full-stars`).style.width = starsPercentageRounded{{id}};
   } else {
     console.error('Rating element not found'); // For debugging
   }

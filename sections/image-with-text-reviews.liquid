@@ -103,7 +103,7 @@
                 <div class="stars-inner">&nbsp;</div>
               </div>
               {{ block.settings.reviews }}{{ block.settings.text }}                
-              {% render 'star-rating', ratingValue: block.settings.reviews, id:randomId %}
+              {% render 'star-rating', ratingValue: block.settings.reviews id:randomId %}
               {%- endcase -%}
             {%- endfor -%}
           </div>

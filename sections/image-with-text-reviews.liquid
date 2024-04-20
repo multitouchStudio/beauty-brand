@@ -98,13 +98,16 @@
                       {{ block.settings.button_label | escape }}
                     </a>
                   {%- endif -%}
-                  {% assign randomId = section.id | split: "_" | last %}
-                {{ randomId }}
-              <div class="stars-outer" id="reviews-{{ randomId }}">
-                <div class="stars-inner">&nbsp;</div>
+                  <div class="review-banner">
+                <div class="stars" aria-label="Rating of {{ block.settings.reviews }} out of 5 stars">
+                  <div class="full-stars">★★★★★</div>
+                  <div class="base-stars">★★★★★</div>
+                </div>
+                <span class="score">{{ block.settings.reviews }}/5&nbsp;</span>
+                <span class="review-text">{{ block.settings.text }}</span>
               </div>
-              {{ block.settings.reviews }}{{ block.settings.text }}                
-              {% render 'star-rating', ratingValue: block.settings.reviews id:randomId %}
+
+              {% render 'star-rating', rating: block.settings.reviews %}
               {%- endcase -%}
             {%- endfor -%}
           </div>

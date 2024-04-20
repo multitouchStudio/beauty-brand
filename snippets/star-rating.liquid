@@ -1,16 +1,24 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-  const ratingElement = document.querySelector('.review-banner .stars');
-  if (ratingElement) {
-    const rating = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
-    const starsPercentage = (rating / 5) * 100;
-    const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
-    console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
-    document.querySelector('.full-stars').style.width = starsPercentageRounded;
-  } else {
-    console.error('Rating element not found'); // For debugging
-  }
+  // Select all elements that have the class '.stars' and are within a container that should show ratings
+  const ratingElements = document.querySelectorAll('.stars');
+
+  ratingElements.forEach(function(ratingElement) {
+    const ratingMatch = ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/);
+    if (ratingMatch) {
+      const rating = parseFloat(ratingMatch[1]);
+      const starsPercentage = (rating / 5) * 100;
+      const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
+      console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
+
+      // Set the width of the '.full-stars' child of this ratingElement
+      ratingElement.querySelector('.full-stars').style.width = starsPercentageRounded;
+    } else {
+      console.error('Rating format not found in:', ratingElement.getAttribute('aria-label')); // For debugging
+    }
+  });
 });
+
 
 
 

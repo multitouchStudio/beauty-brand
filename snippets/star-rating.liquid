@@ -1,19 +1,36 @@
 <script>
-  console.log('test');
-  console.log('{{ id }}');
 document.addEventListener("DOMContentLoaded", function() {
+  // Log the id to verify it's what you expect
+  console.log('ID:', '{{ id }}');
+
   const ratingElement = document.querySelector('.review-banner .stars');
-  console.log('this is the ratingElement', ratingElement);
+  console.log('This is the ratingElement:', ratingElement);
+
   if (ratingElement) {
-    const rating{{id}} = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
-    const starsPercentage{{id}} = (rating{{id}} / 5) * 100;
-    const starsPercentageRounded{{id}} = `${Math.round(starsPercentage{{id}})}% `;
-    console.log('Rating:', rating{{id}}, 'Width:', starsPercentageRounded{{id}}); // For debugging
-    document.querySelector(`#reviews-{{ id }} .full-stars`).style.width = starsPercentageRounded{{id}};
+    const ratingText = ratingElement.getAttribute('aria-label');
+    const ratingMatch = ratingText.match(/Rating of ([\d.]+) out of 5 stars/);
+    
+    if (ratingMatch && ratingMatch[1]) {
+      const rating = parseFloat(ratingMatch[1]);
+      const starsPercentage = (rating / 5) * 100;
+      const starsPercentageRounded = `${Math.round(starsPercentage)}%`;
+
+      console.log('Rating:', rating, 'Width:', starsPercentageRounded); // For debugging
+
+      const fullStarsElement = document.querySelector(`#reviews-{{ id }} .full-stars`);
+      if (fullStarsElement) {
+        fullStarsElement.style.width = starsPercentageRounded;
+      } else {
+        console.error('Full stars element not found for ID:', '{{ id }}');
+      }
+    } else {
+      console.error('Rating not found in aria-label');
+    }
   } else {
     console.error('Rating element not found'); // For debugging
   }
 });
+
 
 
 

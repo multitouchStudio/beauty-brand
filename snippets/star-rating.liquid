@@ -3,6 +3,7 @@
   console.log('{{ id }}');
 document.addEventListener("DOMContentLoaded", function() {
   const ratingElement = document.querySelector('.review-banner .stars');
+  console.log('this is the ratingElement', ratingElement);
   if (ratingElement) {
     const rating{{id}} = parseFloat(ratingElement.getAttribute('aria-label').match(/Rating of ([\d.]+) out of 5 stars/)[1]);
     const starsPercentage{{id}} = (rating{{id}} / 5) * 100;

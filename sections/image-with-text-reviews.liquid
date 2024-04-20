@@ -109,7 +109,7 @@
                 <span class="review-text">{{ block.settings.text }}</span>
               </div>
                 
-              {% render 'star-rating', rating: block.settings.reviews id:randomId %}
+              {% render 'star-rating', rating: block.settings.reviews, id:randomId %}
               {%- endcase -%}
             {%- endfor -%}
           </div>

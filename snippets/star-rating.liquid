@@ -1,48 +1,40 @@
 
 
 <style>
-  .stars-outer::before {
-    content: "\f006 \f006 \f006 \f006 \f006";
+  .stars-outer {
+    display: inline-block;
+    position: relative;
+    unicode-bidi: bidi-override;
+    font-size: 25px; /* Size of the stars */
+    line-height: 1;
+    width: 125px; /* Total width - adjust if changing font size */
+    color: #ccc; /* Color of empty stars (gray) */
   }
 
-  .stars-outer {
-  display: inline-block;
-  position: relative;
-  unicode-bidi: bidi-override;
-  font-size: 25px; /* Adjust size as needed */
-  line-height: 1;
-  color: #ccc; /* Color of empty stars */
-}
+  .stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: gold; /* Color of filled stars (gold) */
+  }
 
-.stars-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  white-space: nowrap;
-  overflow: hidden;
-  color: gold; /* Color of filled stars */
-}
+  .stars-outer::before {
+    content: "★★★★★"; /* Five empty stars using Unicode characters */
+    display: block;
+  }
 
-.stars-outer::before {
-  content: "★★★★★"; /* Five empty stars */
-  display: block;
-}       
+  .score {
+    margin-left: 5px;
+    font-weight: bold;
+  }
 
-.stars-inner::before {
-  content: "★★★★★"; /* Five empty stars */
-  display: block;
-}
-  
-.score {
-        margin-left: 5px;
-        font-weight: bold;
-        }
+  .review-count, .review-text {
+    font-weight: normal;
+  }
+</style>
 
-        .review-count, .review-text {
-        font-weight: normal;
-        }
-
-  </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {

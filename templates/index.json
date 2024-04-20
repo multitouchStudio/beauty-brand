@@ -162,9 +162,9 @@
       ],
       "settings": {
         "title": "As Recommended By",
-        "logo_width": "100px",
-        "padding_top": 20,
-        "padding_bottom": 20
+        "logo_width": "160px",
+        "padding_top": 0,
+        "padding_bottom": 0
       }
     },
     "steps_reMtX4": {

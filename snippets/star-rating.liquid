@@ -8,7 +8,7 @@
   .star-outer {
     display: inline-block;
     position: relative;
-    font-family: fontAwesome;
+    font-family: FontAwesome;
   }
 
         .full-stars {
@@ -32,12 +32,14 @@
 
   </style>
 
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      const ratings{{id}} = {{ratingValue}}
-      const starTotal{{id}} = 5;
-      const starPercentage{{id}} = (ratings{{id}} / starTotal{{id}}) * 100;
-      const starPercentageRounded{{id}} = `${(Math.round(starPercentage{{id}}/10) * 10)}%`
-      document.querySelector(`#reviews-{{id}} .stars-inner`).style.width = starPercentageRounded{{id}};
-    });
-  </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  {% for block in section.blocks %}
+    const ratings{{ block.id }} = {{ block.settings.reviews }};
+    const starTotal{{ block.id }} = 5;
+    const starPercentage{{ block.id }} = (ratings{{ block.id }} / starTotal{{ block.id }}) * 100;
+    const starPercentageRounded{{ block.id }} = `${(Math.round(starPercentage{{ block.id }}/10) * 10)}%`;
+    document.querySelector(`#reviews-{{ block.id }} .stars-inner`).style.width = starPercentageRounded{{ block.id }};
+  {% endfor %}
+});
+</script>

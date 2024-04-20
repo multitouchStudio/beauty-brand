@@ -253,38 +253,38 @@
         "padding_bottom": 36
       }
     },
-    "image_with_text_reviews_aQx73c": {
+    "image_with_text_reviews_bY3J9V": {
       "type": "image-with-text-reviews",
       "blocks": {
-        "heading_tdBiYN": {
+        "heading_CxHQkH": {
           "type": "heading",
           "settings": {
             "heading": "Image with text",
             "heading_size": "h1"
           }
         },
-        "text_taXCpP": {
+        "text_DLwcKH": {
           "type": "text",
           "settings": {
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
             "text_style": "body"
           }
         },
-        "button_xkrtzn": {
+        "button_MrgFm3": {
           "type": "button",
           "settings": {
             "button_label": "Button label",
             "button_link": "",
             "button_style_secondary": false,
-            "reviews": 0.5,
-            "text": "based on 6,347 reviews"
+            "reviews": 3,
+            "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>"
           }
         }
       },
       "block_order": [
-        "heading_tdBiYN",
-        "text_taXCpP",
-        "button_xkrtzn"
+        "heading_CxHQkH",
+        "text_DLwcKH",
+        "button_MrgFm3"
       ],
       "settings": {
         "height": "adapt",
@@ -308,6 +308,6 @@
     "logo_Ffngja",
     "steps_reMtX4",
     "featured_collection",
-    "image_with_text_reviews_aQx73c"
+    "image_with_text_reviews_bY3J9V"
   ]
 }

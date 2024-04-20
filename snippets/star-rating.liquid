@@ -2,10 +2,18 @@
 
 (function(id) {
   document.addEventListener("DOMContentLoaded", function() {
-    // Select the specific rating stars container using the passed 'id'
+    console.log('Looking for stars container with ID:', 'reviews-' + id);
+    
+    // Check if the container itself is found
+    const containerExists = document.querySelector('#reviews-' + id);
+    console.log('Container exists:', containerExists);
+
+    // Now attempt to select the stars container
     const starsContainer = document.querySelector('#reviews-' + id + ' .full-stars');
+    console.log('Stars container found:', starsContainer);
+
     if (starsContainer) {
-      const ratingLabel = document.querySelector('#reviews-' + id).parentNode.getAttribute('aria-label');
+      const ratingLabel = containerExists.parentNode.getAttribute('aria-label');
       const rating = parseFloat(ratingLabel.match(/Rating of ([\d.]+) out of 5 stars/)[1]);
       const starsPercentage = (rating / 5) * 100;
       const starsPercentageRounded = `${Math.round(starsPercentage)}%`;

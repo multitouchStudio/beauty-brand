@@ -6,6 +6,11 @@
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
+  .multicolumn-card__info.shipping__bar {
+    position: relative;
+    margin-left: 40px;
+    margin-top: 10px;
+}
 
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {

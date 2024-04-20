@@ -63,8 +63,8 @@
         "color_scheme": "scheme-e2a8e97f-c562-4fab-aa7d-8560737b744d",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 0,
-        "padding_bottom": 0
+        "padding_top": 12,
+        "padding_bottom": 12
       }
     },
     "image_banner": {

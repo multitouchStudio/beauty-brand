@@ -116,9 +116,7 @@
                         class: 'multicolumn-card__image'
                     }}
                   </div>
-                </div>
-              {%- endif -%}
-              <div class="multicolumn-card__info">
+                  <div class="multicolumn-card__info">
                 {%- if block.settings.title != blank -%}
                   <h3 class="inline-richtext">{{ block.settings.title }}</h3>
                 {%- endif -%}
@@ -139,6 +137,9 @@
                   >
                 {%- endif -%}
               </div>
+                </div>
+              {%- endif -%}
+              
             </div>
           </li>
         {%- endfor -%}

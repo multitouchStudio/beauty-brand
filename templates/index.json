@@ -350,8 +350,8 @@
         "background_style": "primary",
         "swipe_on_mobile": false,
         "star_color": "#ffcc33",
-        "testimonial_background": "#ffffff",
-        "testimonial_section_background": "#eaeaea"
+        "testimonial_background": "#334fb4",
+        "testimonial_section_background": "#dd1d1d"
       }
     }
   },

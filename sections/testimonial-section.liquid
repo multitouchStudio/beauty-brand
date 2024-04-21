@@ -157,6 +157,15 @@
         </div>
       {%- endif -%}
     </slider-component>
+    <div class="review-banner">
+        <div class="stars" aria-label="Rating of {{ section.settings.reviews }} out of 5 stars">
+            <div class="full-stars">★★★★★</div>
+            <div class="base-stars">★★★★★</div>
+        </div>
+        <span class="score">{{ section.settings.reviews }}/5&nbsp;</span>
+        <span class="review-text">{{ section.settings.text }}</span>
+    </div>
+    {% render 'star-rating', rating: section.settings.reviews %}
   </div>
 </div>
 <script src="https://kit.fontawesome.com/c8e4d183c2.js" defer></script>
@@ -297,7 +306,22 @@
       "id": "testimonial_section_background",
       "label": "Section background",
       "default": "#eaeaea"
-    }
+    },
+    {
+          "type": "range",
+          "id": "reviews",
+          "min": 0,
+          "max": 5,
+          "step": 0.1,
+          "label": "Reviews",
+          "default": 3
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "default": "<p>Give customers details about the banner image(s) or content on the template.</p>",
+          "label": "Give Star Rating"
+        }
   ],
   "blocks": [
     {

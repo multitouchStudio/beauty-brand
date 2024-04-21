@@ -307,6 +307,7 @@
         "column_tQhkpm": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_36.png",
             "toggle_image": true,
             "title": "Full Name",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
@@ -317,6 +318,7 @@
         "column_V9NTEc": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_38.png",
             "toggle_image": true,
             "title": "Full Name",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
@@ -327,6 +329,7 @@
         "column_eXHbaN": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_37.png",
             "toggle_image": true,
             "title": "Full Name",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
@@ -346,12 +349,12 @@
         "heading_alignment": "left",
         "image_width": "full",
         "image_ratio": "adapt",
-        "column_alignment": "left",
+        "column_alignment": "center",
         "background_style": "primary",
         "swipe_on_mobile": false,
         "star_color": "#ffcc33",
-        "testimonial_background": "#334fb4",
-        "testimonial_section_background": "#dd1d1d"
+        "testimonial_background": "#fff",
+        "testimonial_section_background": "#fff"
       }
     }
   },

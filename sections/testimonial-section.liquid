@@ -14,9 +14,12 @@
     padding: 20px;
     box-shadow: 0 1px 6px 0 rgb(32 33 36 / 28%);
   }
-  .star {
-  color: gold; /* Change the color as needed */
+  .star, .star.half, .star.empty {
   font-size: 24px; /* Adjust size as needed */
+}
+
+.star {
+  color: {{ section.settings.star_color }}; /* Dynamically set color */
 }
 
 .star.half:after {
@@ -28,6 +31,7 @@
 .star.empty {
   color: lightgray; /* Adjust the color for empty stars */
 }
+
 
   @media only screen and (max-width: 800px) {
     .multicolumn-list__item.slider__slide {

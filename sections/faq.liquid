@@ -1,0 +1,51 @@
+<div class="faq-section">
+</div>
+
+{% schema %}
+    {
+        "name": "FAQ",
+        "settings": 
+        [   {
+                "type": "text",
+                "id": "faq_header",
+                "label": "Header title",
+                "default": "Frequently Asked Questions"
+            },
+            {
+                "type": "richtext",
+                "id": "faq_title",
+                "label": "Header text",
+                "default": "<p>Some information about the FAQs.</p>"
+            }
+        ],
+        "blocks":[
+            {
+                "type": "category",
+                "name": "Category",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Category title"
+                    }
+                ]
+            },
+            {
+                "type": "question",
+                "name": "Question",
+                "settings": [
+                    {
+                        "type": "text",
+                        "id": "title",
+                        "label": "Question title"
+                    },
+                    {
+                        "type": "richtext",
+                        "id": "title",
+                        "label": "Question title"
+                    }
+                ]
+            }
+        ]
+    }
+{% endschema %}

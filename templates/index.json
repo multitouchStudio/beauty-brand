@@ -122,6 +122,62 @@
         "show_text_below": false
       }
     },
+    "testimonial_section_fUw63T": {
+      "type": "testimonial-section",
+      "blocks": {
+        "column_tQhkpm": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_36.png",
+            "toggle_image": true,
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        },
+        "column_V9NTEc": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_38.png",
+            "toggle_image": true,
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        },
+        "column_eXHbaN": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_37.png",
+            "toggle_image": true,
+            "title": "Full Name",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "stars_count": "5",
+            "toggle_review_stars": true
+          }
+        }
+      },
+      "block_order": [
+        "column_tQhkpm",
+        "column_V9NTEc",
+        "column_eXHbaN"
+      ],
+      "settings": {
+        "title": "Testimonials",
+        "subtitle": "Get inspired by other customers",
+        "heading_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "column_alignment": "center",
+        "background_style": "primary",
+        "swipe_on_mobile": false,
+        "star_color": "#ffcc33",
+        "testimonial_background": "#fff",
+        "testimonial_section_background": "#fff"
+      }
+    },
     "logo_Ffngja": {
       "type": "logo",
       "blocks": {
@@ -300,71 +356,15 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "testimonial_section_fUw63T": {
-      "type": "testimonial-section",
-      "blocks": {
-        "column_tQhkpm": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_36.png",
-            "toggle_image": true,
-            "title": "Full Name",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "stars_count": "5",
-            "toggle_review_stars": true
-          }
-        },
-        "column_V9NTEc": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_38.png",
-            "toggle_image": true,
-            "title": "Full Name",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "stars_count": "5",
-            "toggle_review_stars": true
-          }
-        },
-        "column_eXHbaN": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Untitled_design_37.png",
-            "toggle_image": true,
-            "title": "Full Name",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "stars_count": "5",
-            "toggle_review_stars": true
-          }
-        }
-      },
-      "block_order": [
-        "column_tQhkpm",
-        "column_V9NTEc",
-        "column_eXHbaN"
-      ],
-      "settings": {
-        "title": "Testimonials",
-        "subtitle": "Get inspired by other customers",
-        "heading_alignment": "center",
-        "image_width": "full",
-        "image_ratio": "adapt",
-        "column_alignment": "center",
-        "background_style": "primary",
-        "swipe_on_mobile": false,
-        "star_color": "#ffcc33",
-        "testimonial_background": "#fff",
-        "testimonial_section_background": "#fff"
-      }
     }
   },
   "order": [
     "shipping_bar_n4UnTB",
     "image_banner",
+    "testimonial_section_fUw63T",
     "logo_Ffngja",
     "steps_reMtX4",
     "featured_collection",
-    "image_with_text_reviews_bY3J9V",
-    "testimonial_section_fUw63T"
+    "image_with_text_reviews_bY3J9V"
   ]
 }

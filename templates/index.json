@@ -346,7 +346,7 @@
       "settings": {
         "title": "Testimonials",
         "subtitle": "Get inspired by other customers",
-        "heading_alignment": "left",
+        "heading_alignment": "center",
         "image_width": "full",
         "image_ratio": "adapt",
         "column_alignment": "center",

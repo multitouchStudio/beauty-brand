@@ -2,10 +2,10 @@
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 {% style %}
-  /* .multicolumn {
+  #shopify-section-{{ section.id }} .multicolumn {
     padding: 35px 0px;
     background: {{ section.settings.testimonial_section_background }};
-  } */
+  }
   .reviews {
     color: {{ section.settings.star_color }};
   }

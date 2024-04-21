@@ -174,8 +174,10 @@
         "background_style": "primary",
         "swipe_on_mobile": false,
         "star_color": "#ffcc33",
-        "testimonial_background": "#fff",
-        "testimonial_section_background": "#fff"
+        "testimonial_background": "#ffffff",
+        "testimonial_section_background": "#ffffff",
+        "reviews": 4.5,
+        "text": "<p>Give customers details about the banner image(s) or content on the template.<\/p>"
       }
     },
     "logo_Ffngja": {

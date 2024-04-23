@@ -24,14 +24,15 @@
 {% style %}
 .rb-faq-layout {
     display: flex;
-    justify-content: space-between; /* Ensures there is space between two columns */
+    gap: 20px; /* This sets the gap between the columns */
     align-items: flex-start; /* Aligns items at the top */
     margin-top: 2em;
 }
 
-.left-column, .faq-container {
-    flex: 1; /* Makes each side grow equally */
-    margin: 0 1em; /* Adds horizontal spacing between columns */
+.left-column, .rb-faq-container {
+    flex-grow: 1; /* Both sides grow equally */
+    flex-basis: 0; /* Set the initial size to 0 so that flex-grow can take control */
+    /* Remove any margin you have set previously to let gap take control of the spacing */
 }
 
 

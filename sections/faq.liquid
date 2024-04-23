@@ -7,12 +7,12 @@
 }
 
 .faq-description {
-    max-width: 40%; /* Adjust the width of the left column */
+    max-width: 50%; /* Adjust the width of the left column */
     margin-right: 2em; /* Space between the columns */
 }
 
 .faq-container {
-    max-width: 55%; /* Adjust the width of the right column */
+    max-width: 50%; /* Adjust the width of the right column */
 }
 
 .tabs {
@@ -58,12 +58,15 @@
     max-height: 100vh;
     padding: 1em;
 }
+h1.main-page-title.page-title.h0 {
+    margin-top: 0rem;
+}
 </style>
 
 <div class="page-width">
     <div class="page-layout">
         <div class="left-column">
-            <h1 class="main-page-title page-title h0">
+            <h1 class="main-page-title page-title">
                 {{ section.settings.faq_title | escape }}
             </h1>
             {% if section.settings.faq_description %}

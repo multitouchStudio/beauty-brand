@@ -1,102 +1,167 @@
-<style>
-.faq-checkbox {
-  position: absolute;
-  opacity: 0;
-  z-index: -1;
-}
-.tabs {
-  border-radius: 10px;
-  overflow: hidden;
-}
-.tab {
-  width: 100%;
-  color: white;
-  overflow: hidden;
-}
-.tab-label {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
-  font-weight: bold;
-  color: white;
-}
-.tab-label:after {
-  content: "+";
-  width: 1em;
-  height: 1em;
-  text-align: center;
-  transition: all 0.5s;
-}
-.tab-content {
-  max-height: 0;
-  padding: 0 1em;
-  background-color: white;
-  transition: all 0.5s;
-  color: black;
-}
-.tab-content p {
-  margin: 0;
-}
-.faq-checkbox:checked + .tab-label:after {
-  content: "-";
-}
-.faq-checkbox:checked ~ .tab-content {
-  max-height: 100vh;
-  padding: 1em;
-} 
-
-h1.main-page-title.page-title {
-    margin-top: 0;
-}
-</style>
-
-
-
-<div class="page-width page-width--narrow">
-  <h1 class="main-page-title page-title h0">
-    {{ page.title | escape }}
-  </h1>
-  <div class="rte">
-    {{ page.content }}
-  </div>
-  <div class="faq-container">
-    <div class="tabs">
-    	{% for block in section.blocks %}
-      		{% assign item = block.settings %}
-      		<div class="tab">
-      			<input type="checkbox" id="faq_checkbox_{{ forloop.index }}" class="faq-checkbox">
-        		<label for="faq_checkbox_{{ forloop.index }}" class="tab-label button button--primary">{{ item.question }}</label>
-        		<div class="tab-content">{{ item.answer }}</div>
-      		</div>
-      	{% endfor %}
-    </div>
-  </div>
-</div>
+<div class="rb-faq-shopify-section">
+  <h1 style="text-align: center; padding: 20px 20px 0px 20px;"> {{ section.settings.heading }} </h1>
+  <div class="rb-faq-container">   
+      {%for block in section.blocks %}
+      <div class="rb-faq-container-item">
+          <input style="display:none!important;" type="checkbox" id="tab{{forloop.index}}" class="tab-toggle">
+          <label for="tab{{forloop.index}}" class="rb-faq-question">{{block.settings.question}}</label>
+          <div class="rb-faq-answer">{{block.settings.answer}}</div>
+      </div>  
+      {% endfor %}
+  </div>  
+</div>  
 {% schema %}
 {
-  "name": "FAQ Page",
-  "tag": "section",
-  "class": "spaced-section",
-	"blocks": [
-		{
-			"name": "FAQ Item",
-			"type": "faq",
-			"settings": [
-				{
-					"type": "text",
-					"id": "question",
-					"label": "Question",
-					"default": "Do you have a question?"
-				},
-				{
-					"type": "richtext",
-					"id": "answer",
-					"label": "Answer",
-					"default": "<p>I have an answer</p>"
-				}
-			]
-		}
-	]
-}
-{% endschema %} 
+    "name": "Faq",
+	"presets" : [
+                    {
+                        "category":"Custom sections",
+                        "name":"Faq"
+                    }
+			   ],
+					
+    "settings": [
+					{
+						"type":"text",
+						"label":"Heading",
+						"id":"heading"
+					},
+					{
+						"type":"color",
+						"label":"Icon color",
+						"id":"icon-color",
+						"default":"#000000"
+					},
+					{
+						"type":"color",
+						"label":"Question hover color",
+						"id":"hover-color",
+						"default":"#000000"
+					},
+					{
+						"type":"color",
+						"label":"Question color",
+						"id":"question-color",
+						"default":"#000000"
+					},
+					{
+						"type":"color",
+						"label":"Background color",
+						"id":"background-color",
+						"default":"#ffffff"
+					},
+					{
+						"type":"range",
+						"id":"questions-font-size",
+						"label":"Questions font size",
+						"default":1.5,
+						"min":0.8,
+						"max":3.0,
+						"step":0.1
+				
+					}
+					
+					
+				],
+	"blocks":	[
+				
+					{
+						"type":"text",
+						"name":"Questions/Answer",
+						"settings": [
+										{
+                                          "type":"text",
+                                          "label":"Question",
+                                          "id":"question"
+										},
+										{
+                                          "type":"richtext",
+                                          "label":"Answer",
+                                          "id":"answer"
+										}
+							
+									]
+					
+					}
+
+			 	]
+			
+  }
+{% endschema %}
+
+{% style %}
+
+  .rb-faq-shopify-section {
+    padding-right:30px;
+    padding-left:30px;
+	margin-bottom:50px
+  }
+
+  .rb-faq-container {
+      margin:auto;
+      max-width:1000px;
+  }
+
+  .rb-faq-container-item {
+		border-radius: 8px;
+		margin-bottom:10px;
+        overflow: hidden;
+  }
+
+  .rb-faq-question::after{
+		color: {{section.settings.icon-color}};
+		content: '\276F';
+		transition: all 0.2s ease;
+	}
+
+  .rb-faq-question {
+	  border-radius: 8px;
+      display:flex !important;
+      justify-content: space-between;
+	  background-color:{{section.settings.background-color}};
+      padding:15px 20px;
+      font-weight: bold;
+	  color: {{section.settings.question-color}};
+	  font-size: {{section.settings.questions-font-size}}rem;
+  }
+
+  .rb-faq-question:hover {
+		color: {{section.settings.hover-color}};
+	
+	}
+
+  .rb-faq-answer {
+		padding: 0px 20px;
+		position: relative;
+        width: 100%;
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        visibility: hidden;
+        will-change: height;
+		transform: translateY(25px);
+        transition: all .2s ease;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;	
+  }
+
+  .tab-toggle:checked ~ .rb-faq-answer {
+	transform: translateY(0);
+	padding: 15px 20px;
+	height:auto;
+	opacity: 1;
+    overflow: unset;
+    visibility: visible;
+    transition: all .3s ease,opacity 1s ease,height .3s ease;
+  }
+
+  .tab-toggle:checked ~ .rb-faq-question::after {
+		transform: rotate(90deg);
+  }
+
+  .tab-toggle{
+		display:none;
+  }
+
+   
+{% endstyle %}

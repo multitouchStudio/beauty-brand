@@ -398,6 +398,24 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "faq_CRD7gG": {
+      "type": "faq",
+      "blocks": {
+        "category_Bc88BN": {
+          "type": "category",
+          "settings": {
+            "category_title": "General Questions"
+          }
+        }
+      },
+      "block_order": [
+        "category_Bc88BN"
+      ],
+      "settings": {
+        "faq_header": "Frequently Asked Questions",
+        "faq_text": "<p>Some information about the FAQs.<\/p>"
+      }
     }
   },
   "order": [
@@ -408,6 +426,7 @@
     "steps_reMtX4",
     "featured_collection",
     "image_with_text_reviews_bY3J9V",
-    "collection_list_xLkndT"
+    "collection_list_xLkndT",
+    "faq_CRD7gG"
   ]
 }

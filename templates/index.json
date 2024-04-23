@@ -402,20 +402,24 @@
     "faq_CRD7gG": {
       "type": "faq",
       "blocks": {
-        "faq_cJVixN": {
-          "type": "faq",
+        "text_Xp4CNj": {
+          "type": "text",
           "settings": {
-            "question": "Do you have a question?",
-            "answer": "<p>I have an answer<\/p>"
+            "question": "Is this working?",
+            "answer": "<p>It could be<\/p>"
           }
         }
       },
       "block_order": [
-        "faq_cJVixN"
+        "text_Xp4CNj"
       ],
       "settings": {
-        "faq_title": "Frequently Asked Questions",
-        "faq_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        "heading": "",
+        "icon-color": "#000000",
+        "hover-color": "#000000",
+        "question-color": "#000000",
+        "background-color": "#ffffff",
+        "questions-font-size": 2.3
       }
     }
   },

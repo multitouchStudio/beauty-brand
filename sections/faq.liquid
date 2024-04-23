@@ -1,12 +1,14 @@
 
 <div class="page-width">
     <div class="rb-faq-layout">
-        <h1 style="text-align: center; padding: 20px 20px 0px 20px;"> {{ section.settings.heading }} </h1>
-        {% if section.settings.faq_description %}
-            <div class="rte faq-description">
-                {{ section.settings.faq_description }}
-            </div>
-        {% endif %}
+        <div class="left-column">
+            <h1 style="text-align: center; padding: 20px 20px 0px 20px;"> {{ section.settings.heading }} </h1>
+            {% if section.settings.faq_description %}
+                <div class="rte faq-description">
+                    {{ section.settings.faq_description }}
+                </div>
+            {% endif %}
+        </div>
         <div class="rb-faq-container">   
             {%for block in section.blocks %}
             <div class="rb-faq-container-item">
@@ -20,7 +22,17 @@
 </div>  
 
 {% style %}
+.rb-faq-layout {
+    display: flex;
+    justify-content: space-between; /* Ensures there is space between two columns */
+    align-items: flex-start; /* Aligns items at the top */
+    margin-top: 2em;
+}
 
+.left-column, .faq-container {
+    flex: 1; /* Makes each side grow equally */
+    margin: 0 1em; /* Adds horizontal spacing between columns */
+}
 
 
   .rb-faq-shopify-section {

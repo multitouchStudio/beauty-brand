@@ -1,100 +1,33 @@
-<div class="rb-faq-shopify-section">
-  <h1 style="text-align: center; padding: 20px 20px 0px 20px;"> {{ section.settings.heading }} </h1>
-  <div class="rb-faq-container">   
-      {%for block in section.blocks %}
-      <div class="rb-faq-container-item">
-          <input style="display:none!important;" type="checkbox" id="tab{{forloop.index}}" class="tab-toggle">
-          <label for="tab{{forloop.index}}" class="rb-faq-question">{{block.settings.question}}</label>
-          <div class="rb-faq-answer">{{block.settings.answer}}</div>
-      </div>  
-      {% endfor %}
-  </div>  
-</div>  
-{% schema %}
-{
-    "name": "Faq",
-	"presets" : [
-                    {
-                        "category":"Custom sections",
-                        "name":"Faq"
-                    }
-			   ],
-					
-    "settings": [
-					{
-						"type":"text",
-						"label":"Heading",
-						"id":"heading"
-					},
-					{
-						"type":"color",
-						"label":"Icon color",
-						"id":"icon-color",
-						"default":"#000000"
-					},
-					{
-						"type":"color",
-						"label":"Question hover color",
-						"id":"hover-color",
-						"default":"#000000"
-					},
-					{
-						"type":"color",
-						"label":"Question color",
-						"id":"question-color",
-						"default":"#000000"
-					},
-					{
-						"type":"color",
-						"label":"Background color",
-						"id":"background-color",
-						"default":"#ffffff"
-					},
-					{
-						"type":"range",
-						"id":"questions-font-size",
-						"label":"Questions font size",
-						"default":1.5,
-						"min":0.8,
-						"max":3.0,
-						"step":0.1
-				
-					}
-					
-					
-				],
-	"blocks":	[
-				
-					{
-						"type":"text",
-						"name":"Questions/Answer",
-						"settings": [
-										{
-                                          "type":"text",
-                                          "label":"Question",
-                                          "id":"question"
-										},
-										{
-                                          "type":"richtext",
-                                          "label":"Answer",
-                                          "id":"answer"
-										}
-							
-									]
-					
-					}
 
-			 	]
-			
-  }
-{% endschema %}
+<div class="rb-faq-shopify-section">
+    <div class="rb-faq-layout">
+        <h1 style="text-align: center; padding: 20px 20px 0px 20px;"> {{ section.settings.heading }} </h1>
+        {% if section.settings.faq_description %}
+            <div class="rte faq-description">
+                {{ section.settings.faq_description }}
+            </div>
+        {% endif %}
+        <div class="rb-faq-container">   
+            {%for block in section.blocks %}
+            <div class="rb-faq-container-item">
+                <input style="display:none!important;" type="checkbox" id="tab{{forloop.index}}" class="tab-toggle">
+                <label for="tab{{forloop.index}}" class="rb-faq-question">{{block.settings.question}}</label>
+                <div class="rb-faq-answer">{{block.settings.answer}}</div>
+            </div>  
+            {% endfor %}
+        </div> 
+    </div>
+</div>  
 
 {% style %}
+
+
 
   .rb-faq-shopify-section {
     padding-right:30px;
     padding-left:30px;
 	margin-bottom:50px
+    border: 2px solid red;
   }
 
   .rb-faq-container {
@@ -164,5 +97,83 @@
 		display:none;
   }
 
-   
 {% endstyle %}
+
+
+{% schema %}
+    {
+        "name": "Faq",
+        "presets" : [
+            {
+                "category":"Custom sections",
+                "name":"Faq"
+            }
+        ],
+        "settings": [
+        {
+            "type":"text",
+            "label":"Heading",
+            "id":"heading"
+        },
+        {
+            "type": "text",
+            "label": "FAQ Description",
+            "id": "faq_description"
+        },
+        {
+            "type":"color",
+            "label":"Icon color",
+            "id":"icon-color",
+            "default":"#000000"
+        },
+        {
+            "type":"color",
+            "label":"Question hover color",
+            "id":"hover-color",
+            "default":"#000000"
+        },
+        {
+            "type":"color",
+            "label":"Question color",
+            "id":"question-color",
+            "default":"#000000"
+        },
+        {
+            "type":"color",
+            "label":"Background color",
+            "id":"background-color",
+            "default":"#ffffff"
+        },
+        {
+            "type":"range",
+            "id":"questions-font-size",
+            "label":"Questions font size",
+            "default":1.5,
+            "min":0.8,
+            "max":3.0,
+            "step":0.1
+        }
+        ],
+        "blocks":	[
+        {
+            "type":"text",
+            "name":"Questions/Answer",
+            "settings": [
+            {
+                "type":"text",
+                "label":"Question",
+                "id":"question"
+            },
+            {
+                "type":"richtext",
+                "label":"Answer",
+                "id":"answer"
+            }
+
+        ]
+        
+        }
+
+        ]
+      }
+    {% endschema %}

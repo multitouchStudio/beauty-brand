@@ -1,18 +1,14 @@
 <style>
 .page-layout {
     display: flex;
-    justify-content: space-between; /* Space between the two columns */
-    align-items: flex-start; /* Align items at the start of the container */
+    justify-content: space-between; /* Ensures there is space between two columns */
+    align-items: flex-start; /* Aligns items at the top */
     margin-top: 2em;
 }
 
-.faq-description {
-    max-width: 50%; /* Adjust the width of the left column */
-    margin-right: 2em; /* Space between the columns */
-}
-
-.faq-container {
-    max-width: 50%; /* Adjust the width of the right column */
+.left-column, .faq-container {
+    flex: 1; /* Makes each side grow equally */
+    margin: 0 1em; /* Adds horizontal spacing between columns */
 }
 
 .tabs {
@@ -58,6 +54,7 @@
     max-height: 100vh;
     padding: 1em;
 }
+
 h1.main-page-title.page-title {
     margin-top: 0rem;
 }
@@ -89,6 +86,7 @@ h1.main-page-title.page-title {
         </div>
     </div>
 </div>
+
 
 {% schema %}
 {

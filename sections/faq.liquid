@@ -33,33 +33,33 @@
     padding: 1em;
     font-weight: bold;
     background-color: white;
-    position: relative; /* Needed for the absolute positioning of the pseudo-element */
+    cursor: pointer; /* Indicates the label is clickable */
     border-bottom: 2px solid #ccc; /* Underline effect */
 }
 
+/* Custom plus and minus signs */
 .tab-label::after {
     content: '+'; /* The plus sign */
-    position: absolute;
-    right: 20px; /* Adjust the position as needed */
     font-size: 24px; /* Adjust the size as needed */
+    transition: transform 0.2s ease-in-out; /* Smooth transition for the sign toggle */
 }
 
-.tab-content {
-    max-height: 0;
-    padding: 0 1em;
-    background-color: white;
-    transition: all 0.5s ease;
-    color: black;
-    overflow: hidden; /* Makes the content hidden when tab is not checked */
+/* Hide the default checkbox */
+.faq-checkbox {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
 }
 
-.faq-checkbox:checked ~ .tab-label::after {
-    content: '-'; /* Changes to a minus sign when expanded */
+/* Rotate the plus sign to a minus sign when the corresponding checkbox is checked */
+.faq-checkbox:checked + .tab-label::after {
+    content: '−'; /* The minus sign */
 }
 
 .faq-checkbox:checked ~ .tab-content {
     max-height: 100vh;
     padding: 1em;
+    border-top: 1px solid #ccc; /* Adds a separator line if needed */
 }
 
 /* Responsive adjustments for smaller screens */
@@ -71,9 +71,10 @@
 }
 
 h1.main-page-title.page-title {
-    margin-top: 0rem;
+    margin-top: 0;
 }
 </style>
+
 
 <div class="page-width">
     <div class="page-layout">
@@ -92,9 +93,11 @@ h1.main-page-title.page-title {
                 {% for block in section.blocks %}
                 {% assign item = block.settings %}
                 <div class="tab">
-                    <input type="checkbox" id="faq_checkbox_{{ forloop.index }}" class="faq-checkbox">
-                    <label for="faq_checkbox_{{ forloop.index }}" class="tab-label button button--primary">{{ item.question }}</label>
-                    <div class="tab-content">{{ item.answer }}</div>
+                    <!-- The input ID is paired with the label 'for' attribute and controls the content -->
+                    <input type="checkbox" id="faq_checkbox_{{ forloop.index }}" class="faq-checkbox" aria-hidden="true">
+                    <!-- The label controls the content ID and has an aria-expanded attribute -->
+                    <label for="faq_checkbox_{{ forloop.index }}" class="tab-label button button--primary" aria-controls="faq_content_{{ forloop.index }}" aria-expanded="false">{{ item.question }}</label>
+                    <div class="tab-content" id="faq_content_{{ forloop.index }}">{{ item.answer }}</div>
                 </div>
                 {% endfor %}
             </div>

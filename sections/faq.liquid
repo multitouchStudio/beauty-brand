@@ -1,14 +1,19 @@
 <style>
 .page-layout {
     display: flex;
-    justify-content: space-between; /* Ensures there is space between two columns */
-    align-items: flex-start; /* Aligns items at the top */
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    justify-content: space-between;
+    align-items: flex-start;
     margin-top: 2em;
 }
 
 .left-column, .faq-container {
-    flex: 1; /* Makes each side grow equally */
-    margin: 0 1em; /* Adds horizontal spacing between columns */
+    flex-basis: 48%; /* Adjusts the initial width of the columns */
+    margin: 1%; /* Adds some space around columns */
+}
+
+.faq-container {
+    padding-left: 1em; /* Aligns content inside the container */
 }
 
 .tabs {
@@ -18,18 +23,25 @@
 }
 
 .tab {
-    width: 100%;
-    color: white;
-    overflow: hidden;
+    margin-bottom: 1em; /* Adds space between tabs */
 }
 
 .tab-label {
     display: flex;
     justify-content: space-between;
+    align-items: center; /* Centers the label and plus sign */
     padding: 1em;
     font-weight: bold;
-    color: white;
-    background-color: #333; /* Adding background color for visibility */
+    background-color: white;
+    position: relative; /* Needed for the absolute positioning of the pseudo-element */
+    border-bottom: 2px solid #ccc; /* Underline effect */
+}
+
+.tab-label::after {
+    content: '+'; /* The plus sign */
+    position: absolute;
+    right: 20px; /* Adjust the position as needed */
+    font-size: 24px; /* Adjust the size as needed */
 }
 
 .tab-content {
@@ -38,21 +50,24 @@
     background-color: white;
     transition: all 0.5s ease;
     color: black;
+    overflow: hidden; /* Makes the content hidden when tab is not checked */
 }
 
-.tab-content p {
-    margin: 0;
-}
-
-.faq-checkbox {
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
+.faq-checkbox:checked ~ .tab-label::after {
+    content: '-'; /* Changes to a minus sign when expanded */
 }
 
 .faq-checkbox:checked ~ .tab-content {
     max-height: 100vh;
     padding: 1em;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .left-column, .faq-container {
+        flex-basis: 100%;
+        margin: 0 0 2em 0;
+    }
 }
 
 h1.main-page-title.page-title {

@@ -414,7 +414,8 @@
         "text_Xp4CNj"
       ],
       "settings": {
-        "heading": "",
+        "heading": "FAQ Section",
+        "faq_description": "Some stuff",
         "icon-color": "#000000",
         "hover-color": "#000000",
         "question-color": "#000000",

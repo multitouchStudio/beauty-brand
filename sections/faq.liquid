@@ -10,6 +10,7 @@
     <div class="faq-width">
         <div class="faq-body">
             {% for block in section.blocks %}
+                {{ block | json }}
                 {% if block.type == 'category' %}
                     <h2 class="faq-page-category">
                         {{ block.settings.title }}

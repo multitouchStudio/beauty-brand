@@ -402,19 +402,20 @@
     "faq_CRD7gG": {
       "type": "faq",
       "blocks": {
-        "category_Bc88BN": {
-          "type": "category",
+        "faq_cJVixN": {
+          "type": "faq",
           "settings": {
-            "category_title": "General Questions"
+            "question": "Do you have a question?",
+            "answer": "<p>I have an answer<\/p>"
           }
         }
       },
       "block_order": [
-        "category_Bc88BN"
+        "faq_cJVixN"
       ],
       "settings": {
-        "faq_header": "Frequently Asked Questions",
-        "faq_text": "<p>Some information about the FAQs.<\/p>"
+        "faq_title": "Frequently Asked Questions",
+        "faq_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
       }
     }
   },

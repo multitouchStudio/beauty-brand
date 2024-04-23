@@ -108,11 +108,12 @@
         overflow: hidden;
   }
 
-  .rb-faq-question::after{
-		color: {{section.settings.icon-color}};
-		content: '&#43;';
-		transition: all 0.2s ease;
-	}
+.rb-faq-question::after {
+    color: {{ section.settings.icon-color }};
+    content: '\002B'; /* Unicode for plus sign */
+    transition: all 0.2s ease;
+}
+
 
   .rb-faq-question {
 	  border-radius: 8px;

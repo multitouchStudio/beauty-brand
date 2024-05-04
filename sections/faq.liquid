@@ -1,14 +1,16 @@
 
 <div class="page-width">
     <div class="rb-faq-layout">
-        <div class="left-column">
-            <h2> {{ section.settings.heading }}</h2>
-            {% if section.settings.faq_description %}
-                <div class="rte faq-description">
-                    {{ section.settings.faq_description }}
-                </div>
-            {% endif %}
-        </div>
+            <div class="left-column">
+                
+                <h2> {{ section.settings.heading }}</h2>
+                {% if section.settings.faq_description %}
+                    <div class="rte faq-description">
+                        {{ section.settings.faq_description }}
+                    </div>
+                {% endif %}
+
+            </div>
         <div class="rb-faq-container">   
             {%for block in section.blocks %}
             <div class="rb-faq-container-item">
@@ -25,14 +27,16 @@
 .rb-faq-layout {
     display: flex;
     gap: 20px; /* This sets the gap between the columns */
-    align-items: flex-start; /* Aligns items at the top */
+    align-items: stretch; /* Aligns items at the top */
     margin-top: 2em;
 }
 
 .left-column, .rb-faq-container {
     flex-grow: 1; /* Both sides grow equally */
-    flex-basis: 0; /* Set the initial size to 0 so that flex-grow can take control */
-    /* Remove any margin you have set previously to let gap take control of the spacing */
+    flex-basis: 0;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
 

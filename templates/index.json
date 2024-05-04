@@ -408,10 +408,26 @@
             "question": "Is this working?",
             "answer": "<p>It could be<\/p>"
           }
+        },
+        "text_YbdAQ6": {
+          "type": "text",
+          "settings": {
+            "question": "Is this working?",
+            "answer": ""
+          }
+        },
+        "text_mABGHe": {
+          "type": "text",
+          "settings": {
+            "question": "Is this working?",
+            "answer": ""
+          }
         }
       },
       "block_order": [
-        "text_Xp4CNj"
+        "text_Xp4CNj",
+        "text_YbdAQ6",
+        "text_mABGHe"
       ],
       "settings": {
         "heading": "FAQ Section",

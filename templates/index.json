@@ -282,6 +282,46 @@
         "padding_bottom": 36
       }
     },
+    "faq_CRD7gG": {
+      "type": "faq",
+      "blocks": {
+        "text_Xp4CNj": {
+          "type": "text",
+          "settings": {
+            "question": "Is this working?",
+            "answer": "<p>It could be<\/p>"
+          }
+        },
+        "text_YbdAQ6": {
+          "type": "text",
+          "settings": {
+            "question": "Is this working?",
+            "answer": ""
+          }
+        },
+        "text_mABGHe": {
+          "type": "text",
+          "settings": {
+            "question": "Is this working?",
+            "answer": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_Xp4CNj",
+        "text_YbdAQ6",
+        "text_mABGHe"
+      ],
+      "settings": {
+        "heading": "FAQ Section",
+        "faq_description": "Some stuff",
+        "icon-color": "#000000",
+        "hover-color": "#000000",
+        "question-color": "#000000",
+        "background-color": "#ffffff",
+        "questions-font-size": 1.8
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -398,46 +438,6 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "faq_CRD7gG": {
-      "type": "faq",
-      "blocks": {
-        "text_Xp4CNj": {
-          "type": "text",
-          "settings": {
-            "question": "Is this working?",
-            "answer": "<p>It could be<\/p>"
-          }
-        },
-        "text_YbdAQ6": {
-          "type": "text",
-          "settings": {
-            "question": "Is this working?",
-            "answer": ""
-          }
-        },
-        "text_mABGHe": {
-          "type": "text",
-          "settings": {
-            "question": "Is this working?",
-            "answer": ""
-          }
-        }
-      },
-      "block_order": [
-        "text_Xp4CNj",
-        "text_YbdAQ6",
-        "text_mABGHe"
-      ],
-      "settings": {
-        "heading": "FAQ Section",
-        "faq_description": "Some stuff",
-        "icon-color": "#000000",
-        "hover-color": "#000000",
-        "question-color": "#000000",
-        "background-color": "#ffffff",
-        "questions-font-size": 2.3
-      }
     }
   },
   "order": [
@@ -446,9 +446,9 @@
     "testimonial_section_fUw63T",
     "logo_Ffngja",
     "steps_reMtX4",
+    "faq_CRD7gG",
     "featured_collection",
     "image_with_text_reviews_bY3J9V",
-    "collection_list_xLkndT",
-    "faq_CRD7gG"
+    "collection_list_xLkndT"
   ]
 }

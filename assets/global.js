@@ -1273,3 +1273,36 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+
+$('#update-cart').click(function() {
+  const variantId = 43709884956716;
+  const newPrice = 25;
+
+  // Replace with your actual credentials
+  
+
+  const shopName = 'elli-beauty-brand';
+  const apiKey = '787ca7e2519da1ec853b790dddd164fe';
+  const apiPassword = 'fb336e19a6373ff5ff68281a64ed6c74';
+
+  const url = `https://${apiKey}:${apiPassword}@${shopName}.myshopify.com/admin/api/2023-01/variants/${variantId}.json`;
+
+  $.ajax({
+    url: url,
+    type: 'PUT',
+    contentType: 'application/json',
+    data: JSON.stringify({
+      variant: {
+        id: variantId,
+        price: newPrice
+      }
+    }),
+    success: function(response) {
+      alert('Price updated successfully');
+    },
+    error: function(xhr, status, error) {
+      alert('Error updating price: ' + error);
+    }
+  });
+});
